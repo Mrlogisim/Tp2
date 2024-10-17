@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class Libro {
 
+    private String idLibro;
     private String titulo;
     private String autor;
     private int numeroPaginas;
@@ -107,14 +108,11 @@ public class Libro {
 
     //Metodo para devolver un libro
     public void devolver() {
-        if (this.estado == EstadoLibro.PRESTADO) {
-            this.estado = EstadoLibro.DISPONIBLE;   // Cambiamos el estado del libro a DISPONIBLE
-            this.usuarioActual = null;              // Eliminamos la asociación con el usuario
-            this.fechaDevolución = new Date(System.currentTimeMillis());      // Guardamos la fecha de devolución
-            System.out.println("El libro ha sido devuelto.");
-        } else {
-            System.out.println("El libro no está prestado actualmente.");
-        }
+
+        this.estado = EstadoLibro.DISPONIBLE;   // Cambiamos el estado del libro a DISPONIBLE
+        this.usuarioActual = null;              // Eliminamos la asociación con el usuario
+        this.fechaDevolución = new Date(System.currentTimeMillis());      // Guardamos la fecha de devolución
+            
     }
 
 

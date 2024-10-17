@@ -18,21 +18,75 @@ public class Biblioteca {
         this.listaUsuarios = new ArrayList<>();
     }
 
-    public static void prestarLibro(Libro libro, Usuario usuario){
 
+
+    //Getters (accesores)
+    public List<Libro> getListaLibros() {
+        return listaLibros;
     }
 
-    public static void devolverLibro(Libro libro){
-        
+    public List<Usuario> getListaUsuarios() {
+        return listaUsuarios;
     }
 
-    public static void registrarLibro(Libro libro){
 
+
+    //Setters (modificadores)
+    public void setListaLibros(List<Libro> listaLibros) {
+        this.listaLibros = listaLibros;
     }
 
-    public static void registrarUsuario(Usuario usuario) {
-        
+    public void setListaUsuarios(List<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
     }
+
+
+    //Prestar un libro a un usuario
+    public void prestarLibro(Libro libro, Usuario usuario) {
+        if (libro.estaDisponible()) { // Verificamos si el libro está disponible
+            libro.prestar(usuario); // Se asocia el libro al usuario
+            usuario.prestarLibro(libro); // El usuario toma prestado el libro
+            System.out.println("El libro '" + libro.getTitulo() + "' ha sido prestado a " + usuario.getNombre());
+        } else {
+            System.out.println("El libro '" + libro.getTitulo() + "' no está disponible para el préstamo.");
+        }
+    }
+
+    //Devolver un libro a la biblioteca
+    public void devolverLibro(Libro libro) {
+        Usuario usuarioActual = libro.getUsuarioActual(); // Obtenemos el usuario que tiene el libro
+        if (usuarioActual != null) {
+            usuarioActual.devolverLibro(libro); // El usuario devuelve el libro
+            libro.devolver(); // Se actualiza el estado del libro a disponible
+            System.out.println("El libro '" + libro.getTitulo() + "' ha sido devuelto a la biblioteca.");
+        } else {
+            System.out.println("El libro '" + libro.getTitulo() + "' no está prestado a ningún usuario.");
+        }
+    }
+
+    //Registrar un libro en la biblioteca
+    public void registrarLibro(Libro libro) {
+        if (listaLibros.contains(libro)) {
+            listaLibros.add(libro); // Añadimos el libro a la lista de la biblioteca
+            System.out.println("El libro '" + libro.getTitulo() + "' ha sido registrado en la biblioteca.");
+        } else {
+            System.out.println("El libro '" + libro.getTitulo() + "' ya está registrado.");
+        }
+    }
+
+    //Registrar un usuario en la biblioteca
+    public void registrarUsuario(Usuario usuario) {
+        if (listaUsuarios.contains(usuario)) {
+            listaUsuarios.add(usuario); // Añadimos el usuario a la lista de usuarios registrados
+            System.out.println("El usuario '" + usuario.getNombre() + "' ha sido registrado en la biblioteca.");
+        } else {
+            System.out.println("El usuario '" + usuario.getNombre() + "' ya está registrado.");
+        }
+    }
+}
+
 
     
-}
+
+
+    
