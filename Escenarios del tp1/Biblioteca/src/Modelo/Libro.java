@@ -12,6 +12,21 @@ public class Libro {
     private Date fechaPrestamo;
     private Date fechaDevolución;
 
+
+    //Constructor
+    public Libro(String titulo, String autor, int numeroPaginas, EstadoLibro estado, Usuario usuarioActual,
+            Date fechaPrestamo, Date fechaDevolución) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.numeroPaginas = numeroPaginas;
+        this.estado = estado;
+        this.usuarioActual = usuarioActual;
+        this.fechaPrestamo = fechaPrestamo;
+        this.fechaDevolución = fechaDevolución;
+    }
+
+
+
     // getters (accesores)
     public String getTitulo() {
         return titulo;
@@ -73,6 +88,8 @@ public class Libro {
     }
 
 
+
+    
 
     //Metodo para prestar un libro
     public void prestar(Usuario usuario) {
