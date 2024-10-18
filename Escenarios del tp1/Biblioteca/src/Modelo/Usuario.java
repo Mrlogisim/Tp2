@@ -71,7 +71,7 @@ public class Usuario {
 
 
 
-    //Metodo para prestar un libro
+    //Metodo para prestar un libro a otro usuario
     public void prestarLibro(Libro libro) {
         if (libro.estaDisponible()) { // Verificamos si el libro está disponible
             libro.prestar(this); // Llamamos al método prestar del libro

@@ -57,7 +57,6 @@ public class Biblioteca {
         Usuario usuarioActual = libro.getUsuarioActual(); // Obtenemos el usuario que tiene el libro
         if (usuarioActual != null) {
             usuarioActual.devolverLibro(libro); // El usuario devuelve el libro
-            libro.devolver(); // Se actualiza el estado del libro a disponible
             System.out.println("El libro '" + libro.getTitulo() + "' ha sido devuelto a la biblioteca.");
         } else {
             System.out.println("El libro '" + libro.getTitulo() + "' no está prestado a ningún usuario.");
