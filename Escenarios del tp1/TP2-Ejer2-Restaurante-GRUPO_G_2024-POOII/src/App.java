@@ -1,13 +1,24 @@
-import Modelo.CategoriaPlato;
-import Modelo.Cliente;
-import Modelo.EstadoPedido;
-import Modelo.Mesa;
-import Modelo.Pedido;
-import Modelo.Plato;
+import Clases.CategoriaPlato;
+import Clases.Cliente;
+import Clases.EstadoPedido;
+import Clases.Mesa;
+import Clases.Pedido;
+import Clases.Plato;
 
+/**
+ * Clase principal de la aplicación
+ *
+ * @version 2.0
+ * @author Grupo G
+ */
 public class App {
+    /**
+     * Método principal de la aplicación
+     *
+     * @param args Argumentos de la línea de comandos
+     * @throws Error en la realizacion del pedido
+     */
     public static void main(String[] args) throws Exception {
-        
 
         // Crear un cliente
         Cliente cliente1 = new Cliente("Juan Pérez", "123-456-789");
@@ -39,7 +50,6 @@ public class App {
 
         // Cambiar el estado del pedido a SERVIDO
         pedido1.cambiarEstado(EstadoPedido.SERVIDO);
-
 
     }
 }

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"App"},{"p":"Clases","l":"CategoriaPlato"},{"p":"Clases","l":"Cliente"},{"p":"Clases","l":"EstadoPedido"},{"p":"Clases","l":"Mesa"},{"p":"Clases","l":"Pedido"},{"p":"Clases","l":"Plato"}];updateSearchResults();
